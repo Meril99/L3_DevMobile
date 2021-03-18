@@ -6,7 +6,7 @@ export function  GET_TODO(state, todo){
 
 export function ADD_TODO(state, todo){
   if(todo !== ""){
-      state.todos.push({
+      state.currentTodos.push({
         id: state.cpt + 1,
         name: todo,
         done: false
@@ -22,6 +22,7 @@ export function ADD_ITEM(state, item){
         id: state.cpt + 1,
         name: item,
         countTodos : 1,
+        todos : [],
       })
    }
 }
@@ -33,12 +34,12 @@ export function EDIT_TODO(state, todo){
     }
 
 export function REMOVE_TODO(state, todo){
-       var todos = state.todos
+       var todos = state.currentTodos
        todos.splice(todos.indexOf(todo), 1)
     }
 
 export function COMPLETE_TODO(state, todo){
-      todo.done = !todo.done
+      todo.completed = !todo.completed
       console.log("ok");
     }
 export function DONE_EDITING(state){
@@ -52,13 +53,20 @@ export function CANCEL_EDITING(state){
 }
 
 export function HAS_TODOS(state){
-  state.todos.length > 0
+  state.currentTodos.length > 0
 }
 
 
 export function CHANGE_FILTERS(state, value){
   state.filters = value
 }
+
+export function DISPLAY_TODOLIST(state, todos){
+    state.currentTodos = todos
+  }
+//export function CREAT_LISTE(state, list){
+  //state
+//}
 
 //export function CLEAR_TODO(state, newtodo){
 //    newtodo = ''

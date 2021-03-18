@@ -3,11 +3,9 @@ export function  getTodo({commit}, todo){
   }
 
   export function  addTodo({commit}, todo){
-    console.log(todo)
     commit("ADD_TODO", todo)
   }
   export function  addItem({commit}, item){
-    console.log(item)
     commit("ADD_ITEM", item)
   }
 
@@ -39,6 +37,9 @@ export function  getTodo({commit}, todo){
     commit("CHANGE_FILTERS", value)
   }
 
+  export function displayTodoList({commit}, todos){
+    commit("DISPLAY_TODOLIST", todos)
+  }
   //export function  clearItem({commit}){
   //  commit("CLEAR_ITEM")
   //}
