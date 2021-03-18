@@ -1,80 +1,148 @@
+        // :value agit comme v-model 
+
 <template>
-  <div class="todoapp">
+    <div class="home">
+        <input type="text" id="new-todo" v-model="newtodo"
+        >
+        
+        <button class="add-new-btn" @click="addTodo(newtodo)"> Ajouter Todo </button>
+        
+        <input  v-model="update"
+               placeholder="Editer">
+        
 
-    <div class="header">
-      <input type="text" class="new-todo" placeholder="Ajouter une tache" v-model=newTodo  @keyup.enter="addTodo(newTodo)">
-      <button class="addListe" @click="addTodo(newTodo)">Ajouter</button>
+        <ul class="todos-list">
+            <li v-for="todo in listetodos" v-bind:key="todo.id">
+                <span class="todo-content" :class="{ done: todo.done }"
+                @click="completeTodo(todo);"> {{todo.id}} : {{todo.name}} </span>
+                <span class="del-todo" @click="removeTodo(todo);">Delete</span>
+                <button @click="editTodo(todo,update)"> Update </button>
+
+            </li>
+        </ul>
     </div>
-
-    <div class="main">
-      <ul class="todo-list">
-        <li class="todo" v-for="todo in filteredTodos" v-bind:key="todo.id"  :class="{completed: todo.completed, editing: todo == editing}">
-          <div class="view">
-             <input type="checkbox" v-model="todo.completed" class="toggle">
-            <label @dblclick="editTodo(todo)">{{ todo.name }}</label>
-            <button class="destroy" @click.prevent="removeTodo(todo)"></button>
-          </div>
-          <input type="text" class="edit" v-model="todo.name" @keyup.enter="doneEditing(editing)"  @blur="doneEditing(editing)" @keyup.esc="cancelEditing(editing)" v-focus="todo == editing">
-        </li>
-      </ul>
-    </div>
-
-    <footer class="footer pb-10" v-show="hasTodos" >
-      <span class="todo-count"><strong>{{ remaining }}</strong> tâches à faire</span>
-      <ul class="filters">
-        <li><a href="#" :class="{selected: filters === 'all'}" @click.prevent=changeFilters(1)>Toutes</a></li>
-        <li><a href="#" :class="{selected: filters === 'todo'}" @click.prevent=changeFilters(2)>A faire</a></li>
-        <li><a href="#" :class="{selected: filters === 'done'}" @click.prevent=changeFilters(3)>Faites</a></li>
-      </ul>
-    </footer>
-
-  </div>
 </template>
-
 <script>
-    import { mapActions, mapGetters } from "vuex";
+    import {   mapActions, mapGetters } from "vuex";
 
     export default {
         name: 'TodoList',
-
+         
         data() {
             return {
-                newTodo: "",
+
+                newtodo: "",
+                update:"",
+                
             }
         },
-
+        
+      
         methods: {
-            //...mapActions("todolist", ['completeTodo']),
 
+            ...mapActions("todolist", ['completeTodo']),
+            // l'ajouter dans notre liste de todo à false
             ...mapActions("todolist", ['addTodo']),
+            // remove
             ...mapActions("todolist", ['removeTodo']),
             ...mapActions("todolist", ['editTodo']),
-            ...mapActions("todolist", ['doneEditing']),
-            ...mapActions("todolist", ['hasTodos']),
-            ...mapActions("todolist", ['changeFilters']),
+
+
+            
+
+
 
 
 
         },
-
+        
         computed: {
             ...mapGetters("todolist", ['listetodos']),
-            ...mapGetters("todolist", ['editing']),
-            ...mapGetters("todolist", ['remaining']),
-            ...mapGetters("todolist", ['filters']),
-            ...mapGetters("todolist", ['filteredTodos']),
 
-        },
-        directives: {
-          focus(el, value){
-            if(value){
-              el.focus()
-            }
-          }
-      }
+
+
+
+            
+
+
+        }
     }
 </script>
 
 
+<style >
 
-<style src="../style/app.css"></style>
+.home {
+  width: 65%;
+  margin: 0 auto;
+}
+.todos-list{
+  list-style: none;
+  text-align: left;
+}
+.todo-item{
+  padding: 10px;
+  cursor: pointer;
+}
+.todo-content {
+  font-size: 20px;
+  line-height: 1.5;
+   transition: font-weight .5s ease-in-out;
+  
+}
+
+.todo-content:hover {
+    font-weight:bold;
+}
+
+.del-todo {
+    color: red;
+    font-size: 14px;
+    float: right;
+
+}
+
+.del-todo:hover{
+    color: red;
+    font-weight: bold;
+}
+
+
+.done {
+    text-decoration: line-through;
+    color: #dadadc;
+}
+
+.done:hover {
+    font-weight:normal;
+}
+
+
+/* new Todo */
+
+#new-todo {
+    margin-top: 20px;
+    padding: 5px 10px;
+    line-height: 1;
+
+}
+
+#new-todo:focus{
+    
+    outline: none
+}
+
+/* new Todo button */
+
+.add-new-btn{
+
+    padding: 6px 10px;
+    border: 1px solid #dadadc;
+    background-color: #efefef;
+}
+
+.add-new-btn:hover {
+    cursor: pointer;
+}
+
+</style>
