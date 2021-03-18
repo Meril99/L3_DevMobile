@@ -2,8 +2,10 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/Login">Login</router-link>
-    <router-view/>
   </div>
+  <h1>Todos</h1>
+  <router-view/>
+
 </template>
 
 <script>
@@ -11,7 +13,7 @@
 
 </script>
 
-<style>
+<style scooped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

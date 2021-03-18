@@ -6,6 +6,10 @@ export function  getTodo({commit}, todo){
     console.log(todo)
     commit("ADD_TODO", todo)
   }
+  export function  addItem({commit}, item){
+    console.log(item)
+    commit("ADD_ITEM", item)
+  }
 
   export function  editTodo({commit}, todo){
     commit("EDIT_TODO", todo)
@@ -19,7 +23,22 @@ export function  getTodo({commit}, todo){
    commit("COMPLETE_TODO", todo)
   }
 
-  export function  clearTodo({commit}){
-    commit("CLEAR_TODO")
+  export function doneEditing({commit}, editing){
+    commit("DONE_EDITING",editing)
   }
-  
+
+  export function cancelEditing({commit}, editing){
+    commit("CANCEL_EDITING",editing)
+  }
+
+  export function hasTodos({commit}){
+    commit("HAS_TODOS")
+  }
+
+  export function changeFilters({commit}, value){
+    commit("CHANGE_FILTERS", value)
+  }
+
+  //export function  clearItem({commit}){
+  //  commit("CLEAR_ITEM")
+  //}
