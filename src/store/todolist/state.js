@@ -1,6 +1,7 @@
 export default function () {
     return {
-		cpt:4,
+		cpt:1,
+    spt:1,
     oldTodo:'',
     editing : null,
     filters : 1,

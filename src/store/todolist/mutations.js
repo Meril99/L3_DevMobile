@@ -13,18 +13,21 @@ export function ADD_TODO(state, todo){
       })
    }
    todo = ''
+   state.cpt = state.currentTodos.length
    return todo
 }
 
 export function ADD_ITEM(state, item){
   if(item !== ""){
       state.sidebar.push({
-        id: state.cpt + 1,
+        id: state.spt + 1,
         name: item,
         countTodos : 1,
         todos : [],
       })
    }
+   state.spt = state.sidebar.length
+
 }
 export function EDIT_TODO(state, todo){
       // var todos = state.todos

@@ -1,9 +1,7 @@
 export default function () {
     return {
-		state: {
-			token: localStorage.getItem('access_token') || null,
-			filter: 'all',
-			todos: [],
-		  }
-	}
+      token: localStorage.getItem('token') || null,
+      filter: 'all',
+      todos: [],
+    }
 }

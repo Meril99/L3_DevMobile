@@ -1,22 +1,15 @@
 <template>
-    <div class="home">
-        <Sidebar></Sidebar>
-        <TodoList></TodoList>
-
+    <div class="app">
+      <h2>Welcome to our TodoList Application!</h2>
+      <p>Suzana Assefa  DEDEFA </p>
+      <p> Miezan KABLAN </p>
+      <p> Oussama  </p>
+      <p> Emanuel </p> 
     </div>
 </template>
 
 <script>
-    import TodoList from '@/components/TodoList.vue';
-    import Sidebar from '@/components/sidebar.vue';
 
-    export default {
-        name: 'Home',
-        components: {
-            TodoList,
-            Sidebar,
-        },
-    }
 </script>
 
 <style src="../style/app.css"></style>

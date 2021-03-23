@@ -29,6 +29,7 @@
     </footer>
 
   </div>
+
 </template>
 
 <script>
@@ -55,6 +56,7 @@
 
 
 
+
         },
 
         computed: {
@@ -63,6 +65,7 @@
             ...mapGetters("todolist", ['remaining']),
             ...mapGetters("todolist", ['filters']),
             ...mapGetters("todolist", ['filteredTodos']),
+
 
         },
         directives: {

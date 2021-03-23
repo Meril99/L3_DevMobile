@@ -7,12 +7,13 @@ body {
 button {
 	margin: 0;
 	padding: 0;
-	background: red;
+	background: #93675e;
 	font-size: 100%;
 	vertical-align: baseline;
 	font-family: inherit;
 	font-weight: inherit;
 	color: white;
+	padding: 5px;
 }
 
 body {
