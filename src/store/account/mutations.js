@@ -4,6 +4,7 @@ export function LOGIN(state, token){
 
 export function LOGOUT(state){
   state.token = null
+<<<<<<< HEAD
   state.user = {
     id: 0,
     name: " ",
@@ -25,4 +26,6 @@ export function RegisterReponse(state, response){
     state.message = response.message
     console.log(state.message)
   }
+=======
+>>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
 }
