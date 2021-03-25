@@ -13,12 +13,9 @@ import axios from "axios";
       })
       .catch(error =>{
         console.log("error: "+error)
-<<<<<<< HEAD
         if(error == "Error: Request failed with status code 401"){
           alert("email ou mot de passe incorrect ")
         }
-=======
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
       })
    }
 
@@ -27,18 +24,13 @@ import axios from "axios";
    commit('LOGOUT')
  }
 
-<<<<<<< HEAD
  export function register ({commit}, data){
-=======
- export function register (context, data){
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
     return  axios.post('http://138.68.74.39/api/register', null, {params:{
       name: data.name,
       email: data.email,
       password: data.password,
     }})
     .then(response => {
-<<<<<<< HEAD
       commit("RegisterReponse", response)
     })
     .catch(error =>{
@@ -72,12 +64,3 @@ export function getUser({commit}, token){
     commit('SET_USER',response.data)
   })
 }
-=======
-      console.log(response.data.token)
-    })
-    .catch(error =>{
-      console.log(error.response.data)
-    })
-
-}
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563

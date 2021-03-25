@@ -19,22 +19,14 @@ export function ADD_TODO(state, todo){
 
 export function ADD_ITEM(state, item){
   if(item !== ""){
-<<<<<<< HEAD
       state.todoListe.push({
-=======
-      state.sidebar.push({
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
         id: state.spt + 1,
         name: item,
         countTodos : 1,
         todos : [],
       })
    }
-<<<<<<< HEAD
    state.spt = state.todoListe.length
-=======
-   state.spt = state.sidebar.length
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
 
 }
 export function EDIT_TODO(state, todo){

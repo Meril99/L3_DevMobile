@@ -18,14 +18,6 @@
         <input type="password" name="password" id="password" class="sign-input" v-model="password">
       </div>
       <br/>
-<<<<<<< HEAD
-=======
-      <div class="form-control mb-more">
-        <label for="password">Verify password</label>
-        <input type="password" name="password" id="password2" class="sign-input" v-model="password2">
-      </div>
-      <br/>
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
       <div class="form-control">
         <button type="submit" class="btn-submit">Create Account</button>
       </div>
@@ -46,10 +38,6 @@
         name: '',
         email: '',
         password: '',
-<<<<<<< HEAD
-=======
-        password2: '',
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
       }
     },
 

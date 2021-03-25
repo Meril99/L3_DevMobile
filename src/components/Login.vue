@@ -18,10 +18,6 @@
       </div>
 
     </form>
-<<<<<<< HEAD
-=======
-    {{token}}
->>>>>>> 9243d71cc8141299355f1a3d72fdd74dc6da4563
   </div>
 </template>
 
