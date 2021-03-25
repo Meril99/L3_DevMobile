@@ -1,15 +1,20 @@
-export const listetodos = (state) => {
+export const todos = (state) => {
     return state.currentTodos;
 }
 
-export const listesidebar = (state) => {
-    return state.sidebar;
+export const todoListe = (state) => {
+    return state.todoListe;
 }
-
+export const todoListeName = (state) => {
+   return state.currentList.name;
+}
 export const editing = (state) => {
     return state.editing;
 }
 
+export const getListId = (state) => {
+  return state.currentList.id;
+}
 export const filters = (state) => {
     return state.filters;
 }
@@ -32,6 +37,7 @@ export const activeTodos = (state) => {
 }
 
 export const remaining =(state) => {
+  //console.log(state.currentTodos != [])
   return state.currentTodos.filter(todo => !todo.completed).length;
 }
 

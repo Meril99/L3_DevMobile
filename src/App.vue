@@ -1,20 +1,35 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/Login">Login</router-link> |
-    <router-link to="/register">Register</router-link> |
-    <router-link to="/logout">logout</router-link>
-
-
+  <router-link to="/">Home</router-link> |
+  <router-link to="/todo" v-if="isLoggedIn">Todo</router-link> |
+    <router-link to="/account" v-if="!isLoggedIn">Todo</router-link> |
+    <router-link to="/account" v-if="!isLoggedIn">Login</router-link>
+    <router-link to="/account" v-if="isLoggedIn" @click="logout" >Logout</router-link>
   </div>
-  <h1>Todos</h1>
+  <h1>Bonjour {{userName}}</h1>
   <router-view/>
 
 </template>
 
 <script>
+import { mapActions, mapGetters} from "vuex";
 
+export default {
+  name: 'App',
+    data() {
+      return {
 
+      }
+    },
+    methods: {
+    ...mapActions("account", ['logout']),
+    },
+    computed: {
+    ...mapGetters("account", ['isLoggedIn']),
+      ...mapGetters("account", ['userName']),
+
+    }
+}
 </script>
 
 <style scooped>
