@@ -9,23 +9,12 @@ export default function () {
     todoListe : [],
     currentTodos :  [
       {
-        id:1,
-        name: 'exemple-todo',
-        completed: 0,
+
       }
     ],
     currentList :
       {
-        id: 3,
-        name: 'exemple-liste',
-        countTodos: 1,
-        todos: [
-          {
-            id:1,
-            name: 'exemple-todo',
-            completed: 0,
-          }
-        ]
+
       }
   }
 }

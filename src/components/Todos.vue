@@ -5,7 +5,6 @@
     <h2>La list : {{todoListeName }}</h2>
       <input type="text" class="new-todo" placeholder="Ajouter une tache" v-model=newTodo  @keyup.enter="createTodo({name : newTodo, token :token, currentTodos : filteredTodos})">
       <button class="addListe" @click="createTodo({id:getListId, name : newTodo, token : token})">Ajouter</button>
-      {{getListId}}
     </div>
 
     <div class="main">
